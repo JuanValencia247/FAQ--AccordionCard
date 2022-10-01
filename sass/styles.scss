@@ -1,0 +1,124 @@
+@use 'variables' as v;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 12px;
+    font-family: v.$Font-Kumbh-Sans;
+    background: linear-gradient(100deg, (v.$Soft-violet), (v.$Soft-blue));
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.main-container{
+    background-color: white;
+    width: 330px;
+    min-height: 536px;
+    margin: 145px 0 85px 0;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 10px 40px v.$Very-dark-desaturated-blue;
+    .section-container-s1{
+        &__img{
+            display: block;
+            width: 240px;
+            margin: -100px auto 0;
+        }
+        &__shadow{
+            width: 240px;
+            margin: -75px auto 0;
+            content: url('../images/bg-pattern-mobile.svg');
+        }
+    }
+    .section-container-s2{
+        &__title{
+            margin: 24px 0 30px;
+            font-size: 2.6em;
+            text-align: center;
+        }
+        &__details{
+            margin: 16px 0;
+            font-size: 1.05em;
+            position: relative;
+        }
+        &__details[open] {
+            font-weight: 700;
+
+        }
+        &__details[open]  .section-container-s2__details-sumary-icon{
+            transform: rotate(180deg);
+            transition: 300ms;
+        }
+        &__details-sumary{
+            list-style: none;
+        }
+        &__details-sumary:hover{
+            cursor: pointer;
+            color: v.$Soft-red;
+            font-weight: 700;
+        }
+        &__details-sumary-icon{
+            position: absolute;
+            right: 5px;
+            transition: 300ms;
+        }
+        &__details-description{
+            color: v.$Dark-grayish-blue;
+            font-weight: 400;
+            margin: 10px 0;
+        }
+        &__line{
+            border-color: rgb(255, 255, 255);
+        }
+
+    }
+}
+@media (min-width: 900px){
+    .main-container{
+        width: 924px;
+        display: flex;
+        background-image: url('../images/bg-pattern-desktop.svg');
+        background-position-x: -536px;
+        background-position-y: -281px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        .section-container-s1{
+            width: 100%;
+            &__img{
+                width: 474px;
+                margin: 67px 0 0 -130px;
+            }
+            &__shadow{
+              content: '';
+            }
+        }
+        .section-container-s2{
+            width: 100%;
+            padding: 15px 80px 20px 40px;
+            &__title{
+                text-align: left;
+                margin-bottom: 32px;
+            }
+            &__details{
+                margin: 26px;
+            }
+
+        }
+    }
+}
+
+// ================ Footer ==================== //
+.attribution { 
+    margin-bottom: 20px;
+    font-size: 14px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(0, 0%, 79%); 
+    text-decoration: none;
+}
